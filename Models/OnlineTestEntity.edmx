@@ -1,0 +1,217 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="OnlineTestDBModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="Admin">
+          <Key>
+            <PropertyRef Name="Admin_Id" />
+          </Key>
+          <Property Name="Admin_Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Admin_Name" Type="varchar" MaxLength="20" />
+          <Property Name="Password" Type="varchar" MaxLength="20" />
+        </EntityType>
+        <EntityType Name="Question">
+          <Key>
+            <PropertyRef Name="Question_Id" />
+          </Key>
+          <Property Name="Question_Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Question_Name" Type="varchar" MaxLength="30" />
+          <Property Name="Option_one" Type="varchar" MaxLength="10" />
+          <Property Name="Option_two" Type="varchar" MaxLength="10" />
+          <Property Name="Option_three" Type="varchar" MaxLength="10" />
+          <Property Name="Option_four" Type="varchar" MaxLength="10" />
+          <Property Name="Question_Answer" Type="varchar" MaxLength="40" />
+          <Property Name="Test_Name" Type="varchar" MaxLength="20" />
+        </EntityType>
+        <EntityType Name="Result">
+          <Key>
+            <PropertyRef Name="Result_Id" />
+          </Key>
+          <Property Name="Result_Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Result_Status" Type="varchar" MaxLength="10" />
+          <Property Name="Score" Type="int" />
+          <Property Name="User_name" Type="varchar" MaxLength="20" />
+          <Property Name="Test_Id" Type="int" />
+        </EntityType>
+        <EntityType Name="Test">
+          <Key>
+            <PropertyRef Name="Test_Id" />
+          </Key>
+          <Property Name="Test_Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Test_Name" Type="varchar" MaxLength="20" />
+          <Property Name="Test_Description" Type="varchar" MaxLength="30" />
+          <Property Name="Test_Marks" Type="int" />
+          <Property Name="Test_PassMarks" Type="int" />
+        </EntityType>
+        <EntityType Name="UserTable">
+          <Key>
+            <PropertyRef Name="User_Id" />
+          </Key>
+          <Property Name="User_Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="User_Name" Type="varchar" MaxLength="20" />
+          <Property Name="User_Email" Type="varchar" MaxLength="30" />
+          <Property Name="User_Password" Type="varchar" MaxLength="10" />
+          <Property Name="Gender" Type="char" MaxLength="1" />
+          <Property Name="Contact_Number" Type="int" />
+        </EntityType>
+        <EntityContainer Name="OnlineTestDBModelStoreContainer">
+          <EntitySet Name="Admin" EntityType="Self.Admin" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Question" EntityType="Self.Question" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Result" EntityType="Self.Result" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Test" EntityType="Self.Test" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="UserTable" EntityType="Self.UserTable" Schema="dbo" store:Type="Tables" />
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="OnlineTestDBModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="Admin">
+          <Key>
+            <PropertyRef Name="Admin_Id" />
+          </Key>
+          <Property Name="Admin_Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Admin_Name" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="Password" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="Question">
+          <Key>
+            <PropertyRef Name="Question_Id" />
+          </Key>
+          <Property Name="Question_Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Question_Name" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Name="Option_one" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Name="Option_two" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Name="Option_three" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Name="Option_four" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Name="Question_Answer" Type="String" MaxLength="40" FixedLength="false" Unicode="false" />
+          <Property Name="Test_Name" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="Result">
+          <Key>
+            <PropertyRef Name="Result_Id" />
+          </Key>
+          <Property Name="Result_Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Result_Status" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Name="Score" Type="Int32" />
+          <Property Name="User_name" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="Test_Id" Type="Int32" />
+        </EntityType>
+        <EntityType Name="Test">
+          <Key>
+            <PropertyRef Name="Test_Id" />
+          </Key>
+          <Property Name="Test_Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Test_Name" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="Test_Description" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Name="Test_Marks" Type="Int32" />
+          <Property Name="Test_PassMarks" Type="Int32" />
+        </EntityType>
+        <EntityType Name="UserTable">
+          <Key>
+            <PropertyRef Name="User_Id" />
+          </Key>
+          <Property Name="User_Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="User_Name" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="User_Email" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Name="User_Password" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Name="Gender" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+          <Property Name="Contact_Number" Type="Int32" />
+        </EntityType>
+        <EntityContainer Name="OnlineTestDBEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="Admins" EntityType="Self.Admin" />
+          <EntitySet Name="Questions" EntityType="Self.Question" />
+          <EntitySet Name="Results" EntityType="Self.Result" />
+          <EntitySet Name="Tests" EntityType="Self.Test" />
+          <EntitySet Name="UserTables" EntityType="Self.UserTable" />
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="OnlineTestDBModelStoreContainer" CdmEntityContainer="OnlineTestDBEntities">
+          <EntitySetMapping Name="Admins">
+            <EntityTypeMapping TypeName="OnlineTestDBModel.Admin">
+              <MappingFragment StoreEntitySet="Admin">
+                <ScalarProperty Name="Admin_Id" ColumnName="Admin_Id" />
+                <ScalarProperty Name="Admin_Name" ColumnName="Admin_Name" />
+                <ScalarProperty Name="Password" ColumnName="Password" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Questions">
+            <EntityTypeMapping TypeName="OnlineTestDBModel.Question">
+              <MappingFragment StoreEntitySet="Question">
+                <ScalarProperty Name="Question_Id" ColumnName="Question_Id" />
+                <ScalarProperty Name="Question_Name" ColumnName="Question_Name" />
+                <ScalarProperty Name="Option_one" ColumnName="Option_one" />
+                <ScalarProperty Name="Option_two" ColumnName="Option_two" />
+                <ScalarProperty Name="Option_three" ColumnName="Option_three" />
+                <ScalarProperty Name="Option_four" ColumnName="Option_four" />
+                <ScalarProperty Name="Question_Answer" ColumnName="Question_Answer" />
+                <ScalarProperty Name="Test_Name" ColumnName="Test_Name" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Results">
+            <EntityTypeMapping TypeName="OnlineTestDBModel.Result">
+              <MappingFragment StoreEntitySet="Result">
+                <ScalarProperty Name="Result_Id" ColumnName="Result_Id" />
+                <ScalarProperty Name="Result_Status" ColumnName="Result_Status" />
+                <ScalarProperty Name="Score" ColumnName="Score" />
+                <ScalarProperty Name="User_name" ColumnName="User_name" />
+                <ScalarProperty Name="Test_Id" ColumnName="Test_Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Tests">
+            <EntityTypeMapping TypeName="OnlineTestDBModel.Test">
+              <MappingFragment StoreEntitySet="Test">
+                <ScalarProperty Name="Test_Id" ColumnName="Test_Id" />
+                <ScalarProperty Name="Test_Name" ColumnName="Test_Name" />
+                <ScalarProperty Name="Test_Description" ColumnName="Test_Description" />
+                <ScalarProperty Name="Test_Marks" ColumnName="Test_Marks" />
+                <ScalarProperty Name="Test_PassMarks" ColumnName="Test_PassMarks" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="UserTables">
+            <EntityTypeMapping TypeName="OnlineTestDBModel.UserTable">
+              <MappingFragment StoreEntitySet="UserTable">
+                <ScalarProperty Name="User_Id" ColumnName="User_Id" />
+                <ScalarProperty Name="User_Name" ColumnName="User_Name" />
+                <ScalarProperty Name="User_Email" ColumnName="User_Email" />
+                <ScalarProperty Name="User_Password" ColumnName="User_Password" />
+                <ScalarProperty Name="Gender" ColumnName="Gender" />
+                <ScalarProperty Name="Contact_Number" ColumnName="Contact_Number" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

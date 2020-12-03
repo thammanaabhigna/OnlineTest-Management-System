@@ -1,0 +1,56 @@
+﻿@model IEnumerable<OnlineTest.Models.Test>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Test List</h2>
+
+<p>
+   <h3> @Html.ActionLink("Create New", "Create")</h3>
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayName("Test Name")
+        </th>
+        <th>
+            @Html.DisplayName("Description")
+        </th>
+        <th>
+            @Html.DisplayName("Total Marks")
+        </th>
+        <th>
+            @Html.DisplayName("Passing Marks")
+        </th>
+        <th>
+
+        </th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Test_Name)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Test_Description)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Test_Marks)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Test_PassMarks)
+            </td>
+            <td>
+                <h3>
+                @Html.ActionLink("Edit", "Edit", new { id = item.Test_Id }) |
+                @Html.ActionLink("Details", "Details", new { id = item.Test_Id }) |
+                @Html.ActionLink("Delete", "Delete", new { id = item.Test_Id })
+                    </h3>
+            </td>
+        </tr>
+    }
+
+</table>

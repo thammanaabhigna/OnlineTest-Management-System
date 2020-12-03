@@ -1,0 +1,43 @@
+﻿
+@model OnlineTest.Models.UserTable
+
+@{
+    ViewBag.Title = "Instructions";
+    Layout = "View.cshtml";
+}
+
+<h2>Instructions</h2>
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+
+    <div class="form-horizontal">
+
+        <hr />
+
+        <div class="form-group">
+
+            <div class="col-md-10">
+                <ol>
+                    <li>This Online Test Consists of 10 Questions. Each question carries 1 Mark.</li>
+                    <li>Your session is recorded. Nagivating to any other tabs is considered as Malpractice.</li>
+                    <li>Click "Begin Test" to take the exam.</li>
+                </ol>
+
+
+            </div>
+        </div>
+
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                <input type="submit" value="Begin Test" class="btn btn-default" />
+            </div>
+        </div>
+    </div>
+}
+
+<div>
+    @Html.ActionLink("Back to List", "Courses")
+</div>
+

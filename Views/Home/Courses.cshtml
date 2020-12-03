@@ -1,0 +1,29 @@
+﻿
+
+@{
+    ViewBag.Title = "TestSelection";
+    Layout = "View.cshtml";
+}
+<link href="~/Content/Site.css" rel="stylesheet" type="text/css" />
+<link href="~/Content/bootstrap.min.css" rel="stylesheet" type="text/css" />
+<script src="~/Scripts/modernizr-2.6.2.js"></script>
+<html>
+<body>
+    <div class="container-sm" style="margin:auto;width:500px;text-align:center">
+        <h2>Choose Test</h2>
+        <br />
+        @*<input type="submit" onclick="location.href='@Url.Action("Index","AllTest")'" />*@
+        <button id="btn1" type="button" class="btn btn-primary" onclick="location.href='@Url.Action("PythonInstruction","AllTest")'">Python</button><br /><br />
+        <button id="btn2" type="button" class="btn btn-primary" onclick="location.href='@Url.Action("CSharpInstruction","AllTest")'">C#</button><br /><br />
+        <button id="btn3" type="button" class="btn btn-primary" onclick="location.href='@Url.Action("JAVATest","AllTest")'">JAVA</button><br /><br />
+        <button id="btn4" type="button" class="btn btn-primary" onclick="location.href='@Url.Action("ADOTest","AllTest")'">ADO.Net</button>
+
+    </div>
+    <script src="~/Scripts/jquery-1.10.2.min.js"></script>
+    <script src="~/Scripts/bootstrap.min.js"></script>
+</body>
+</html>
+
+
+
+

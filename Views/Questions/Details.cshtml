@@ -1,0 +1,74 @@
+﻿@model OnlineTest.Models.Question
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Question</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayName("Question")
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Question_Name)
+        </dd>
+
+        <dt>
+            @Html.DisplayName("Option 1")
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Option_one)
+        </dd>
+
+        <dt>
+            @Html.DisplayName("Option 2")
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Option_two)
+        </dd>
+
+        <dt>
+            @Html.DisplayName("Option 3")
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Option_three)
+        </dd>
+
+        <dt>
+            @Html.DisplayName("Option 4")
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Option_four)
+        </dd>
+
+        <dt>
+            @Html.DisplayName("Answer")
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Question_Answer)
+        </dd>
+
+        <dt>
+            @Html.DisplayName("Test Name")
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Test_Name)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.Question_Id }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

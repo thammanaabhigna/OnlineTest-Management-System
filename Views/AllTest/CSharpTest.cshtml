@@ -1,0 +1,104 @@
+﻿
+@model IEnumerable<OnlineTest.Models.Question>
+
+@{
+    ViewBag.Title = "PythonTest";
+    Layout = "View.cshtml";
+    if (TempData["result"] != null)
+    {
+        @TempData["result"]
+    }
+}
+
+<h2>CSharp Test</h2>
+
+
+
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayName("Question")
+        </th>
+        <th>
+            @Html.DisplayName("Option A")
+        </th>
+        <th>
+            @Html.DisplayName("Option B")
+        </th>
+        <th>
+            @Html.DisplayName("Option C")
+        </th>
+        <th>
+            @Html.DisplayName("Option D")
+        </th>
+
+        <th></th>
+    </tr>
+    <h3>
+        @foreach (var item in Model)
+        {
+            using (Html.BeginForm("CheckAnswerCSharp", "AllTest"))
+            {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Question_Name)
+
+                    </td>
+                    <td>
+
+                        @Html.RadioButton("Answer", "a")<span>@Html.DisplayFor(model => item.Option_one)</span>
+
+                    </td>
+                    <td>
+                        @Html.RadioButton("Answer", "b")<span>@Html.DisplayFor(model => item.Option_two)</span>
+
+
+                    </td>
+                    <td>
+                        @Html.RadioButton("Answer", "c")<span>@Html.DisplayFor(model => item.Option_three)</span>
+
+
+                    </td>
+                    <td>
+                        @Html.RadioButton("Answer", "d")<span>@Html.DisplayFor(model => item.Option_four)</span>
+
+
+
+                    </td>
+
+                    <td>
+                        @{
+                            TempData["CorrectAnswer"] = item.Question_Answer;
+                        }
+
+                        <input type="hidden" id="Question_Answer" name="Question_Answer" value="@item.Question_Answer" />
+                        <button class="btn bg-success" name="submit" value="Accept" onclick="SubmitAnswer()">Submit Answer</button>
+                    </td>
+                </tr>
+            }
+
+        }
+</table>
+
+
+<button class="btn-group-lg" value="EndTest" onclick="location.href='@Url.Action("Result","AllTest")'">End Test</button>
+
+
+
+
+
+<script type="text/javascript">
+
+        function SubmitAnswer() {
+            alert("Answer submitted successfully");
+
+            }
+
+
+</script>
+
+
+
+
+
+

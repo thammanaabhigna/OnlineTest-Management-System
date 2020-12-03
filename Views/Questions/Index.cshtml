@@ -1,0 +1,71 @@
+﻿@model IEnumerable<OnlineTest.Models.Question>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Question List</h2>
+
+<p>
+   <h3>@Html.ActionLink("Create New", "Create") </h3>
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayName("Question")
+        </th>
+        <th>
+            @Html.DisplayName("Option 1")
+        </th>
+        <th>
+            @Html.DisplayName("Option 2")
+        </th>
+        <th>
+            @Html.DisplayName("Option 3")
+        </th>
+        <th>
+            @Html.DisplayName("Option 4")
+        </th>
+        <th>
+            @Html.DisplayName("Answer")
+        </th>
+        <th>
+            @Html.DisplayName("Test Name")
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Question_Name)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Option_one)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Option_two)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Option_three)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Option_four)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Question_Answer)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Test_Name)
+        </td>
+        <td>
+            <h3>
+            @Html.ActionLink("Edit", "Edit", new { id=item.Question_Id }) |
+            @Html.ActionLink("Details", "Details", new { id=item.Question_Id }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.Question_Id })
+                </h3>
+        </td>
+    </tr>
+}
+
+</table>
